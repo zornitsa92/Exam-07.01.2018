@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LadyBird
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+
+            Console.WriteLine($"{new string(' ', n - 2)}@   @");
+            Console.WriteLine($"{new string(' ', n - 1)}\\_/");
+            Console.WriteLine($"{new string(' ', n - 1)}/ \\");
+            Console.WriteLine($"{new string(' ', n - 1)}|_|");
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine($"{new string(' ', (n - i) - 1)}/{new string(' ', i)}|{new string(' ', i)}\\");
+            }
+            for (int i = 0; i < n / 2; i++)
+            {
+                if (n % 2 == 0)
+                {
+                    Console.WriteLine($"|{new string(' ', n / 2 - 1)}@{new string(' ', n / 2 - 1)}|{new string(' ', n / 2 - 1)}@{new string(' ', n / 2 - 1)}|");
+                }
+                else
+                {
+                    Console.WriteLine($"|{new string(' ', n / 2 - 1)}@{new string(' ', n / 2)}|{new string(' ', n / 2)}@{new string(' ', n / 2 - 1)}|");
+                }
+            }
+            for (int i = n; i >= n / 2 + 2; i--)
+            {
+                Console.WriteLine($"{new string(' ', n - i)}\\{new string(' ', i - 1)}|{new string(' ', i - 1)}/");
+            }
+            if (n % 2 == 0)
+            {
+                Console.WriteLine($"{new string(' ', n / 2)}{new string('^', n / 2)}|{new string('^', n / 2)}");
+            }
+            else
+            {
+                Console.WriteLine($"{new string(' ', n / 2 + 1)}{new string('^', n / 2)}|{new string('^', n / 2)}");
+            }
+        }
+    }
+}
