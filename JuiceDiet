@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace JuiceDiet
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int r = int.Parse(Console.ReadLine());
+            int s = int.Parse(Console.ReadLine());
+            int c = int.Parse(Console.ReadLine());
+            int max = int.Parse(Console.ReadLine());
+
+            double rMl = 4.5;
+            double sMl = 7.5;
+            double cMl = 15;
+
+            for (int i = 1; i <= r; i++)
+            {
+                for (int j = 1; j <= s; j++)
+                {
+                    for (int k = 1; k <= c; k++)
+                    {                        
+                            double maxJuice = i * rMl + j * sMl + k * cMl;
+                            if (maxJuice == max || maxJuice == max -1)
+                            {
+                            Console.WriteLine($"{i} Raspberries, {j} Strawberries, {k} Cherries.Juice: {maxJuice} ml.");
+                        }
+                            
+                        
+                    }
+                }
+            }
+
+        }
+    }
+}
